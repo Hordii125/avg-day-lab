@@ -4,11 +4,35 @@
 package org.example;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        int[] numbers = {1, 2, 3, 4, 5};
+
+        // Using For Loop Implementations
+        System.out.println("Using For Loop Implementations:");
+        AvgUsingFor avgCalculator = new AvgUsingFor(numbers);
+        System.out.println("Average: " + avgCalculator.averageUsingForLoop());
+
+        SumUsingFor sumCalculator = new SumUsingFor(numbers);
+        System.out.println("Sum: " + sumCalculator.sumUsingForLoop());
+
+        MinUsingFor minCalculator = new MinUsingFor(numbers);
+        System.out.println("Minimum: " + minCalculator.minimumUsingForLoop());
+
+        MaxUsingFor maxCalculator = new MaxUsingFor(numbers);
+        System.out.println("Maximum: " + maxCalculator.maximumUsingForLoop());
+
+        // Using Java Streams Implementations
+        System.out.println("\nUsing Java Streams Implementations:");
+        AvgUsingJavaAPI avgStreams = new AvgUsingJavaAPI(numbers);
+        System.out.println("Average: " + avgStreams.averageUsingStream());
+
+        SumUsingJavaAPI sumStreams = new SumUsingJavaAPI(numbers);
+        System.out.println("Sum: " + sumStreams.sumUsingStream());
+
+        MinUsingJavaAPI minStreams = new MinUsingJavaAPI(numbers);
+        System.out.println("Minimum: " + minStreams.minimumUsingStream());
+
+        MaxUsingJavaAPI maxStreams = new MaxUsingJavaAPI(numbers);
+        System.out.println("Maximum: " + maxStreams.maximumUsingStream());
     }
 }
